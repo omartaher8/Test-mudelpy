@@ -1,0 +1,24 @@
+import unittest
+from service.models import Product
+
+class TestProductModel(unittest.TestCase):
+
+    def test_read_product(self):
+        ...
+
+    def test_update_product(self):
+        ...
+
+    def test_delete_product(self):
+        ...
+
+    def test_list_all_products(self):
+        products = [
+            Product(id=1, name="Product 1", category="Category A", available=True, price=10.0),
+            Product(id=2, name="Product 2", category="Category B", available=False, price=15.0),
+            Product(id=3, name="Product 3", category="Category A", available=True, price=20.0)
+        ]
+        self.assertEqual(len(products), 3)
+        self.assertEqual(products[0].name, "Product 1")
+        self.assertEqual(products[1].name, "Product 2")
+        self.assertEqual(products[2].name, "Product 3")
